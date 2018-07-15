@@ -13,15 +13,8 @@
 ActiveRecord::Schema.define(version: 2018_07_14_155249) do
 
   create_table "users", force: :cascade do |t|
-    t.string "firstname"
     t.string "email"
-    t.string "surname"
     t.string "password_digest"
-    t.string "country"
-    t.string "city"
-    t.string "street"
-    t.integer "house"
-    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
