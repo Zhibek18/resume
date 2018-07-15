@@ -1,1 +1,12 @@
-<h1> Hello!</h1>
+<%if signed_in?%>
+	<h1> Hello!</h1>
+	<%= link_to "Log out", logout_path, method: :delete, class: "btn btn-primary" %> 
+	
+<%else%>
+	<div class="jumbotron">
+		<h1>Welcome!</h1>
+		<%= link_to "Sign in", login_path, class: "btn btn-primary" %> 
+		<%= link_to "Register", signup_path, class: "btn btn-outline-info" %>
+	</div>
+<% end %>
+
