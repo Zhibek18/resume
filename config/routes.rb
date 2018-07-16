@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'questionnaires/index'
-  get 'questionnaires/new'
-  get 'questionnaires/create'
-  get 'questionnaires/edit'
-  get 'questionnaires/update'
-  get 'questionnaires/destroy'
 
   get "/signup", to: "users#new" 
   get "/login", to: "sessions#new"

@@ -10,9 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_15_070408) do
+ActiveRecord::Schema.define(version: 2018_07_16_102343) do
+
+  create_table "anketa", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "firstname"
+    t.string "surname"
+    t.string "country"
+    t.string "city"
+    t.string "street"
+    t.integer "house"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "questionnaires", force: :cascade do |t|
+    t.string "firstname"
+    t.string "surname"
+    t.string "country"
+    t.string "city"
+    t.string "street"
+    t.integer "house"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_informs", force: :cascade do |t|
+    t.integer "user_id"
     t.string "firstname"
     t.string "surname"
     t.string "country"
