@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-md-6 offset-md-3">
+		<h1>Resume</h1>
+		<%= form_for @user_inform do |f|%>
+			<% if @user_inform.errors.any? %>
+				<div class="alert alert-danger">
+					<ul>
+						<% @user_inform.errors.full_messages.each do |m|%>
+							<li><%= m %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+			<div class="form-group">
+				<%= f.text_field :firstname, placeholder: "firstname", class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.text_field :surname, placeholder: "surname", class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.number_field :age, placeholder: "age", class: "form-control" %>
+			</div>
+
+			<div class="form-group">
+				<%= f.text_field :city, placeholder: "city", class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.text_field :street, placeholder: "street", class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.number_field :house, placeholder: "house", class: "form-control"%>
+			</div>
+			<%= f.submit :submit, class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>

@@ -1,12 +1,12 @@
 class UserInformsController < ApplicationController
   def new
-    @user_inform = User_inform.new
+    @user_inform = UserInform.new
   end
 
   def create
-    @user_inform = User_inform.new(user_inform_params)
+  	#@user_inform = UserInform.create( user_id:current_user.id)
+    @user_inform = current_user.user_informs.build(user_inform_params)
     if @user_inform.save
-      sign_in @user_inform
       redirect_to @user_inform
     else
       render :new
@@ -15,6 +15,6 @@ class UserInformsController < ApplicationController
 end
 
 private
-def user_params
-	params.require(:user).permit(:firstname, :surname, :user_id, :age)
+def user_inform_params
+	params.require(:user_inform).permit(:firstname, :surname, :age, :city, :street, :house)
 end
